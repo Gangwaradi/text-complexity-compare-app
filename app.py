@@ -6,6 +6,8 @@ from scipy.sparse import hstack
 from joblib import dump, load
 
 import nltk
+nltk.download('stopwords')
+nltk.download('punkt')
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import word_tokenize
