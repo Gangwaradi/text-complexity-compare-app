@@ -74,9 +74,9 @@ def load_data():
 
 scaler, model, tfidf_vec = load_data()
 
-st.title('Compare the rading level complexity between two Texts')
-text_1 = st.text_input("Text 1")
-text_2 = st.text_input("Text 2")
+st.title('Compare the reading level complexity between two english passages')
+text_1 = st.text_input("Passage 1")
+text_2 = st.text_input("Passage 2")
 if st.button('Submmit'):
     data = pd.DataFrame(columns = ['excerpt'])
     data['excerpt'] = [text_1,text_2]
@@ -101,12 +101,12 @@ if st.button('Submmit'):
     y_min = -3.676268
     y_max = 1.711390
     y_pred = (y_pred - y_min)/(y_max - y_min)
-    st.write('**Text 1: **' + text_1)
-    st.write('**Text 2: **' + text_2)
+    st.write('**Passage 1: **' + text_1)
+    st.write('**passage 2: **' + text_2)
     if (y_pred[0] > y_pred[1]):
-        st.write('**Text 2 is ' + str(int((y_pred[0]-y_pred[1])*100)) + '% more complex than Text 1**')
+        st.write('**passage 2 is ' + str(int((y_pred[0]-y_pred[1])*100)) + '% more complex than Passage 1**')
     elif (y_pred[1] > y_pred[0]):
-        st.write('**Text 1 is ' + str(int((y_pred[1]-y_pred[0])*100)) + '% more complex than Text 2**')
+        st.write('**Passage 1 is ' + str(int((y_pred[1]-y_pred[0])*100)) + '% more complex than Passage 2**')
     else:
-        st.write('**Text 1 and Text 2 are same**')
+        st.write('**Passage 1 and Passage 2 are have same complexity level**')
         
