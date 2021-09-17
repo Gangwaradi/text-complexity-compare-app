@@ -108,5 +108,5 @@ if st.button('Submmit'):
     elif (y_pred[1] > y_pred[0]):
         st.write('**Passage 1 is ' + str(int((y_pred[1]-y_pred[0])*100)) + '% more complex than Passage 2**')
     else:
-        st.write('**Passage 1 and Passage 2 are have same complexity level**')
+        st.write('**Passage 1 and Passage 2 have same complexity level**')
         
